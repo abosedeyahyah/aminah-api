@@ -1,8 +1,8 @@
 import React from 'react'
-const Card = (user) => {
+const Card = ({ user }) => {
   return (
     <>
-         <div >
+         <div  >
             <h2>User Data:</h2>
             <p>Name: {user.first_name} {user.last_name}</p>
              <p>Email: {user.email}</p>

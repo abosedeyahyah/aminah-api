@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
-
 const Header = () =>  {
     const [users, setUsers] = useState([]);
-  
     const[loading, setLoading] = useState(false);
     const[errorm, setErrorm] = useState("");
-  
     const apiUrl = ('https://reqres.in/api/users'); 
   
     useEffect(() => {
@@ -35,7 +32,7 @@ const Header = () =>  {
           <div className='flex'>
           {loading ? <p>Loading...</p> : errorm ? <p>{errorm}</p> : !users?.length ? <p>No record found</p> : (
             users.map(user => (
-                <Card />
+                <Card key={user.id} user={user}/>
             ))
           ) }
 
